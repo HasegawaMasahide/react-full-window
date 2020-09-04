@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`component should be render 1`] = `
+exports[`simple rendering component has child of html element 1`] = `
+<div
+  className="react-full-window"
+>
+  <p>
+    some_paragraph
+  </p>
+</div>
+`;
+
+exports[`simple rendering component has child of text 1`] = `
+<div
+  className="react-full-window"
+>
+  some_text
+</div>
+`;
+
+exports[`simple rendering component should be render 1`] = `
 <div
   className="react-full-window"
 />

@@ -3,13 +3,31 @@ import React from "react";
 
 import FullWindow from "../src";
 
-test("component should be render", () => {
-    const fw = shallow(<FullWindow />);
+describe("simple rendering", () => {
+    test("component should be render", () => {
+        const fw = shallow(<FullWindow />);
 
-    // Interaction demo
-    expect(fw.text()).toEqual("");
-    expect(fw.find(".react-full-window")).toBeTruthy();
+        expect(fw.text()).toEqual("");
+        expect(fw.find(".react-full-window")).toBeTruthy();
+        expect(fw).toMatchSnapshot();
+    });
 
-    // Snapshot demo
-    expect(fw).toMatchSnapshot();
+    test("component has child of text", () => {
+        const fw = shallow(<FullWindow>some_text</FullWindow>);
+
+        expect(fw.text()).toEqual("some_text");
+        expect(fw).toMatchSnapshot();
+    });
+
+    test("component has child of html element", () => {
+        const fw = shallow(
+            <FullWindow>
+                <p>some_paragraph</p>
+            </FullWindow>
+        );
+
+        expect(fw.text()).toEqual("some_paragraph");
+        expect(fw.find("p")).toHaveLength(1);
+        expect(fw).toMatchSnapshot();
+    });
 });
