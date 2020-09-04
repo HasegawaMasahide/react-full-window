@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "outDir": "./dist",
     "rootDir": "./src",
     "module": "commonjs",
@@ -9,6 +10,7 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
