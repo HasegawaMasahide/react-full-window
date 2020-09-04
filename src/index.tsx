@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const FullWindow: React.FC = (props) => {
-    return <div className="react-full-window">{props.children}</div>
-}
+    return <div className="react-full-window">{props.children}</div>;
+};
 
 export default FullWindow;
